@@ -10,7 +10,13 @@ import ErrorPage from '../view/ErrorPage'
 import Register from '../view/Register'
 
 import BookDetail from '../view/book/BookDetail'
+import BookListByCategory from '../view/book/BookListByCategory'
+import MyFavoriteBook from '../view/book/MyFavoriteBook'
 
+import Infomation from '../view/my/Infomation'
+
+// 2. define some routes
+// Each route needs to be mapped to a component.
 const routes = [{
   path: '/',
   redirect: '/login',
@@ -42,13 +48,27 @@ const routes = [{
   path: '/bookdetail',
   name: 'bookdetail',
   component: BookDetail
+    },
+    {
+        path: '/myfavoritebook',
+        name: 'myfavoritebook',
+        component: MyFavoriteBook
+      },
+    {
+    path: '/bookListbycategory',
+    name: 'bookListbycategory',
+    component: BookListByCategory
+    },
+ {
+        path: '/infomation',
+        name: 'infomation',
+        component: Infomation
 },
 {
   path: '/login',
   name: 'login',
   component: Login
 },
-
 {
   path: '/errorpage',
   name: 'errorpage',
@@ -56,10 +76,11 @@ const routes = [{
 },
 ]
 
+// 3. Create a routing instance and pass the `routes` configuration
 const router = createRouter({
-
+  // 4. The implementation of the history mode is provided internally. For simplicity, we use hash mode here.
   history: createWebHashHistory(),
-  routes, // `routes: routes`
+  routes, // `routes: routes` 
 })
 
 export default router;

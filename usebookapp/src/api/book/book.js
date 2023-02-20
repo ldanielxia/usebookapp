@@ -9,6 +9,15 @@ const api = {
     },
     search(data,header){
         return ajax.post('bookAPI/search',data,header)
+    },
+    bookdetail(id,data){
+        return ajax.get('bookAPI/bookdetail/'+id,{params:data});
+    },
+    addBookcommunicate(data,header){
+        return ajax.post('commonmybatisAPI/bookcommunicate',data,header)
+    },
+    booklistbycategory(id,data){
+        return ajax.get('bookAPI/booklistbycategory/'+id,{params:data});
     }
 }
 export default api

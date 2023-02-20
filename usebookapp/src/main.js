@@ -18,8 +18,11 @@ import { Uploader } from 'vant';
 import { Dialog } from 'vant';
 import { Notify } from 'vant';
 import { Icon } from 'vant';
-import { Divider  } from 'vant';
+import { Divider ,Switch  } from 'vant';
 import { Image as VanImage } from 'vant';
+import { ActionSheet } from 'vant';
+import { Popup } from 'vant';
+import { DatetimePicker } from 'vant';
 import 'vant/lib/index.css';
 
 Axios.defaults.baseURL="/api"
@@ -58,4 +61,8 @@ app.use(Icon);
 app.use(Divider);
 app.use(VanImage);
 app.use(Search);
+app.use(Switch);
+app.use(ActionSheet);
+app.use(Popup);
+app.use(DatetimePicker);
 app.mount('#app');

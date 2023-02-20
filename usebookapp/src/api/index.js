@@ -1,7 +1,7 @@
  import axios from 'axios'
 
 const config = {
-    baseURL: process.env.VUE_APP_BASE_API, //  baseURL: 'http://localhost:34741' //  baseURL: 'http://www.wtswater.cn:5050' // 'http://www.94ox.com'   baseURL: 'http://localhost:34741'  
+    baseURL: process.env.VUE_APP_BASE_API, //  baseURL: 'http://localhost:34741' 
     //baseURL: 'http://localhost:8080/',
     redirectURL:process.env.VUE_APP_REDIRECT_API,
 }
