@@ -15,16 +15,16 @@
             <van-cell title="Gender" :value="gender" />
             <van-cell title="BirthDay" :value="dateofbirth" />
             <van-cell title="Phone" :value="phone" />
+            <van-cell title="Area" :value="area" />
             <van-cell title="School" :value="school" />
             <van-cell title="Programe" :value="programe" />
         </van-cell-group>
         <div class="content">
             <van-cell-group inset>
+                <van-cell title="My UseBooks" @click="handleMyUseBook" />
                 <van-cell title="My Favorite" @click="handleFavoriteBook" />
-            </van-cell-group>
-        </div>
-        <div class="content">
-            <van-cell-group inset>
+                <van-cell title="My Orders" @click="handleMyOrdersBook" />
+                <van-cell title="My Saled" @click="handleMySaledBook" />
                 <van-cell
                     title="Modify Infomation  "
                     @click="handleInfomation"
@@ -36,7 +36,15 @@
                 <van-cell title="Logout  " @click="logout" />
             </van-cell-group>
         </div>
-        <div class="content" style="height: 50px" />
+        <!-- <div class="content">
+            <van-cell-group>
+                <van-cell title="  " />
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="  " />
+            </van-cell-group>
+        </div> -->
+        <div class="content" style="height: 45px" />
     </div>
 </template>
         
@@ -52,6 +60,7 @@ const about = {
             this.gender = storage.gender
             this.phone = storage.phone
             this.school = storage.school
+            this.area = storage.area
             this.programe = storage.programe
             this.dateofbirth = storage.dateofbirth
             this.firstName = storage.firstName
@@ -69,6 +78,7 @@ const about = {
             dateofbirth: '',
             firstName: '',
             lastName: '',
+            area: '',
             id: 0
         }
     },
@@ -92,6 +102,15 @@ const about = {
         },
         handleFavoriteBook() {
             this.$router.push('/myfavoritebook')
+        },
+        handleMyUseBook() {
+            this.$router.push('/myusebook')
+        },
+        handleMyOrdersBook() {
+            this.$router.push('/myorderbook')
+        },
+        handleMySaledBook() {
+            this.$router.push('/mysaledbook')
         }
     }
 }

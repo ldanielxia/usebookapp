@@ -1,11 +1,13 @@
 <template>
     <div>
         <van-nav-bar
-            title="MyFavorite Book"
+            title="My Use Book"
             left-text="Back"
             left-arrow
             @click-left="onClickLeft"
             class="nav"
+            right-text="Add"
+            @click-right="onClickAdd"
         />
         <div v-if="list.length > 0">
             <van-cell-group v-for="item in list" :key="item.id">
@@ -40,8 +42,8 @@
         
 <script>
 import Storage from '../../storage.js'
-import api from '@/api/book/bookfavorites.js'
-const MyFavorite = {
+import api from '@/api/book/book.js'
+const MyUseBooks = {
     data() {
         return {
             baseUrl: '',
@@ -54,7 +56,7 @@ const MyFavorite = {
         if (storage != null) {
             this.id = storage.id
             let data = { id: this.id }
-            api.favoritebook(data)
+            api.myusebooks(data)
                 .then((res) => {
                     console.log(res)
                     if (res.data.code == 1) {
@@ -73,10 +75,18 @@ const MyFavorite = {
             })
         },
         onclick(item) {
-            console.log(item)
-            this.$router.push({ path: '/bookdetail', query: { id: item.id } })
+            this.$router.push({
+                path: '/myusebookedit',
+                query: { id: item.id }
+            })
+        },
+        onClickAdd() {
+            this.$router.push({
+                path: '/myusebooknew',
+                query: { id: -1 }
+            })
         }
     }
 }
-export default MyFavorite
+export default MyUseBooks
 </script>

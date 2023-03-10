@@ -1,7 +1,7 @@
 <template>
     <div>
         <van-nav-bar
-            title="MyFavorite Book"
+            title="My Orders"
             left-text="Back"
             left-arrow
             @click-left="onClickLeft"
@@ -40,8 +40,8 @@
         
 <script>
 import Storage from '../../storage.js'
-import api from '@/api/book/bookfavorites.js'
-const MyFavorite = {
+import api from '@/api/book/book.js'
+const MyOrders = {
     data() {
         return {
             baseUrl: '',
@@ -54,7 +54,7 @@ const MyFavorite = {
         if (storage != null) {
             this.id = storage.id
             let data = { id: this.id }
-            api.favoritebook(data)
+            api.myorderbooks(data)
                 .then((res) => {
                     console.log(res)
                     if (res.data.code == 1) {
@@ -74,9 +74,12 @@ const MyFavorite = {
         },
         onclick(item) {
             console.log(item)
-            this.$router.push({ path: '/bookdetail', query: { id: item.id } })
+            this.$router.push({
+                path: '/bookorderdetail',
+                query: { id: item.id }
+            })
         }
     }
 }
-export default MyFavorite
+export default MyOrders
 </script>

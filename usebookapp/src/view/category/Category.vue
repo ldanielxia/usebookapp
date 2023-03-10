@@ -19,6 +19,7 @@
             </van-cell-group>
         </div>
         <div style="text-align: center" v-if="list.length <= 0">No Data</div>
+        <div class="content" style="height: 45px" />
     </div>
 </template>
         

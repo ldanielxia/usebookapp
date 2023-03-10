@@ -96,8 +96,12 @@ export default {
                         json.studentID = res.data.data.studentID
                         json.gender = res.data.data.gender
                         json.phone = res.data.data.phone
+                        json.area = res.data.data.area
+                        json.areaId = res.data.data.areaId
                         json.school = res.data.data.school
+                        json.schoolId = res.data.data.schoolId
                         json.programe = res.data.data.programe
+                        json.programeId = res.data.data.programeId
                         json.dateofbirth = res.data.data.dateOfBirth
                         Storage.set('key', json)
                         this.$router.push('/home')

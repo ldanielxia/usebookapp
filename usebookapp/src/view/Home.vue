@@ -1,6 +1,8 @@
 <template>
     <div>
-        <van-nav-bar :title="aboutMsg" />
+        <div id="mine">
+            <van-nav-bar :title="aboutMsg" class="nav" />
+        </div>
         <router-view></router-view>
         <van-tabbar v-model="active" @change="onChange">
             <van-tabbar-item name="home" icon="home-o">Home</van-tabbar-item>
@@ -44,3 +46,11 @@ const home = {
 }
 export default home
 </script>
+<style  >
+.nav {
+    background-color: #12c4bb !important;
+}
+.van-nav-bar__title {
+    color: white !important;
+}
+</style>

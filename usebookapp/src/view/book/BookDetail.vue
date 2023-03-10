@@ -5,6 +5,7 @@
             left-text="Back"
             left-arrow
             @click-left="onClickLeft"
+            class="nav"
         />
         <van-cell-group>
             <van-cell>
@@ -69,6 +70,11 @@
                     />
                 </van-row>
             </van-cell>
+            <van-cell-group>
+                <van-button class="btnLogin" block @click="handleorder()"
+                    >Order</van-button
+                >
+            </van-cell-group>
         </van-cell-group>
         <!--communicate list-->
 
@@ -250,12 +256,19 @@ const bookdetail = {
                         console.log('false' + e)
                     })
             }
+        },
+        handleorder() {
+            // on confirm
+            this.$router.push({
+                path: '/order',
+                query: { id: this.item.id }
+            })
         }
     }
 }
 export default bookdetail
 </script>
-<style>
+<style scoped>
 .buttom {
     height: 45px;
     line-height: 45px;
@@ -263,5 +276,11 @@ export default bookdetail
     bottom: 15px;
     left: 0;
     width: 100%;
+}
+.btnLogin {
+    background-color: #12c4bb;
+    color: white;
+    width: 100%;
+    margin-top: 30px;
 }
 </style>

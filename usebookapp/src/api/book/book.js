@@ -18,6 +18,37 @@ const api = {
     },
     booklistbycategory(id,data){
         return ajax.get('bookAPI/booklistbycategory/'+id,{params:data});
-    }
+    },
+    myusebooks(data,header){
+        return ajax.post('bookAPI/myusebook',data,header)
+    },
+    myorderbooks(data,header){
+        return ajax.post('bookAPI/orderbook',data,header)
+    },
+    bookorderdetail(id,data){
+        return ajax.get('bookAPI/bookorderdetail/'+id,{params:data});
+    },
+    mysaledbooks(data,header){
+        return ajax.post('bookAPI/salebook',data,header)
+    },
+    newusebooks(data) {
+        const header = {
+            'content-type': 'multipart/form-data'  
+        }
+        return ajax.post('bookAPI/newusebookwithimg',data,header)
+    },
+    udpateusebookswithimg(data) {
+        const header = {
+            'content-type': 'multipart/form-data'  
+        }
+        return ajax.post('bookAPI/updateusebookwithimg',data,header)
+    },
+    udpateusebooks(data) {
+        const header = {
+            'content-type': 'multipart/form-data'  
+        }
+        return ajax.post('bookAPI/updateusebook',data,header)
+    },
+   
 }
 export default api

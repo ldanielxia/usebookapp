@@ -5,6 +5,7 @@
             left-text="Back"
             left-arrow
             @click-left="onClickLeft"
+            class="nav"
         />
         <div style="margin: 0 auto; text-align: center">
             <h3>{{ obj.fir }}</h3>
@@ -141,7 +142,9 @@ const infomation = {
     },
     methods: {
         onClickLeft() {
-            this.$router.go(-1)
+            this.$router.push({
+                path: '/home/me'
+            })
         },
         onShowGender() {
             this.showGender = true
@@ -301,3 +304,17 @@ const infomation = {
 }
 export default infomation
 </script>
+<style scoped >
+.nav {
+    background-color: #3078ca !important;
+}
+.van-nav-bar__title {
+    color: white !important;
+}
+.van-nav-bar__text {
+    color: white !important;
+}
+.van-nav-bar .van-icon {
+    color: white !important;
+}
+</style>
